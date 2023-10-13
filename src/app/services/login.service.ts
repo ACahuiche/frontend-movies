@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -18,5 +19,17 @@ export class LoginService {
     }
 
       return this.http.post(url, body);
+  }
+
+  setToken(token: string): void {
+    localStorage.setItem(environment.localStorageItem, token);
+  }
+
+  getToken(): string | null {
+    return localStorage.getItem(environment.localStorageItem);
+  }
+
+  logout(): void {
+    localStorage.removeItem(environment.localStorageItem);
   }
 }

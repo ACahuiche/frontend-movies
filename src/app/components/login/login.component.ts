@@ -19,6 +19,7 @@ export class LoginComponent {
     this.loginService.authLogin(this.userEmail, this.userPassword)
     .subscribe(
       (response) =>{
+        this.loginService.setToken(response.data);
         this.router.navigate(['/dashboard']);
       },
       (error) => {

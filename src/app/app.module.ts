@@ -11,6 +11,8 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 
 import { LoginService } from './services/login.service';
 
+import { AuthGuard } from './guardians/auth.guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,8 @@ import { LoginService } from './services/login.service';
     HttpClientModule
   ],
   providers: [
-    LoginService
+    LoginService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
