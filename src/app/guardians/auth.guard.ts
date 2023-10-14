@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
 import { environment } from 'src/environments/environment';
 import jwt_decode from "jwt-decode";
@@ -7,7 +7,7 @@ import jwt_decode from "jwt-decode";
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanActivate {
+export class AuthGuard{
   constructor(private loginService: LoginService, private router: Router) {}
 
   canActivate(): boolean {

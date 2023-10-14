@@ -12,5 +12,9 @@
           </div>
           <button (click)="login()">Login</button>
       </form>
+
+      <div [@fadeInError] *ngIf="errorOccurred">
+        <p id="errorMessage">{{errorMessage}}</p>
+      </div>
   </div>
 </div>
